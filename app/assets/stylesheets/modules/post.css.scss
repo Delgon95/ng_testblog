@@ -13,7 +13,13 @@
   @extend .btn-small;
 }
 
-.post__button--edit, .post__button--comment {
+.post__button--destroy {
+  @extend .btn;
+  @extend .btn-danger;
+  @extend .btn-small;
+}
+
+.post__button--edit, .post__button--comment, .post__button--destroy {
   font-size: 12px; }
 
 .post--short-size {

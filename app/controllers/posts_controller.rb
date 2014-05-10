@@ -48,6 +48,6 @@ class PostsController < ApplicationController
 
   def post_params
     return if %w{mark_archived}.include? action_name
-    params.require(:post).permit(:body, :title, :tags)
+    params.require(:post).permit(:body, :title, :tags).merge(user_id: current_user.id)
   end
 end
