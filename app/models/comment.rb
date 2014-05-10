@@ -14,4 +14,8 @@ class Comment
   def score
     votes.inject(0) { |sum, x| sum + x.value }
   end
+
+  def negative_votes
+    votes.where(value: -1)
+  end
 end
