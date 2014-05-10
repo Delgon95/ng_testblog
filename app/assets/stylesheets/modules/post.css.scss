@@ -1,4 +1,3 @@
-
 .post__tags-list {
   float: left;
   height: auto;
@@ -26,6 +25,7 @@
 }
 
 .post--full-size {
+  overflow: hidden;
   .post__body {
     margin: 15px 0;
   }

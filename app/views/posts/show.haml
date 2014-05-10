@@ -11,3 +11,13 @@
   .post__tags-list.tagsinput
     - post.tags_array.each do |tag|
       = content_tag :span, tag, class: 'tag'
+
+%h2
+  Comments
+
+.media-list
+  - comments.each do |comment|
+    .media
+      .media-body
+        %h4.media-heading= comment.user.name
+        = comment.body
