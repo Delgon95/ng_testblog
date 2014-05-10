@@ -9,6 +9,7 @@ Easyblog::Application.routes.draw do
 
     resources :comments do
       member do
+        post :mark_as_not_abusive
         post :vote_up
         post :vote_down
       end

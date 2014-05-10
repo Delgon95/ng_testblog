@@ -25,5 +25,8 @@
           .score= comment.score
           = link_to "v", vote_down_post_comment_path(post, comment), method: :post, class: 'vote-down'
       .media-body
-        %h4.media-heading= comment.user.name
+        %h4.media-heading
+          = comment.user.name
+          - if comment.abusive
+            = link_to "This post is not abusive!", mark_as_not_abusive_post_comment_path(post, comment), class: 'post__button--mark-as-not-abusive'
         = comment.body
