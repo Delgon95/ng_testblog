@@ -10,7 +10,7 @@ class Post
   validates_presence_of :body, :title
 
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   default_scope ->{ ne(archived: true) }
 
