@@ -4,6 +4,7 @@
     %small
       = post.created_at
   = link_to "edit", edit_post_path(post), class: 'post__button--edit'
+  = link_to "comment", new_post_comment_path(post), class: 'post__button--comment'
 
   .post__body
     = post.body
