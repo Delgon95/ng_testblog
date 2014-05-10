@@ -11,6 +11,8 @@ class Comment
   belongs_to :user
   has_many :votes, dependent: :destroy
 
+  scope :unabusive, -> { ne(abusive: true) }
+
   def score
     votes.inject(0) { |sum, x| sum + x.value }
   end
