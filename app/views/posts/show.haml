@@ -18,13 +18,16 @@
 
 .post__comments.media-list
   - comments.each do |comment|
-    .media
+    .media.comment
       .pull-left
         .voting-area.media-object
-          = link_to "^", vote_up_post_comment_path(post, comment), method: :post, class: 'vote-up'
+          - unless current_user.voted_on(comment)
+            = link_to "^", vote_up_post_comment_path(post, comment), method: :post, class: 'vote-up'
           .score= comment.score
-          = link_to "v", vote_down_post_comment_path(post, comment), method: :post, class: 'vote-down'
-      .media-body
+
+          - unless current_user.voted_on(comment)
+            = link_to "^", vote_down_post_comment_path(post, comment), method: :post, class: 'vote-down'
+      .media-body.content
         %h4.media-heading
           = comment.user.name
           - if comment.abusive

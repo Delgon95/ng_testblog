@@ -42,4 +42,9 @@ class User
   def to_s
     nickname.present? ? nickname : name
   end
+
+  # OPTIMIZE
+  def voted_on comment
+    votes.where(comment: comment).count > 0
+  end
 end
