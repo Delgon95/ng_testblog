@@ -30,6 +30,7 @@
       .media-body.content
         %h4.media-heading
           = comment.user.name
+          %small= l comment.created_at
           - if comment.abusive
             = link_to "This post is not abusive!", mark_as_not_abusive_post_comment_path(post, comment), class: 'post__button--mark-as-not-abusive'
         = comment.body

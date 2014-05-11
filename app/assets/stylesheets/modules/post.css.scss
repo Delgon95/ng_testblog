@@ -22,6 +22,10 @@
 .post__button--edit, .post__button--comment, .post__button--destroy, .post__button--mark-as-not-abusive {
   font-size: 12px; }
 
+.post__button--mark-as-not-abusive {
+  float: right;
+}
+
 .post--short-size {
   border-bottom: 1px solid #f2f2f2; }
 
