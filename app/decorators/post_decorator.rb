@@ -7,6 +7,7 @@ class PostDecorator < Draper::Decorator
   end
 
   def friendly_date
+    # TODO timezones for users
     created_at.strftime("%d/%m/%Y : %H:%M")
   end
 
